@@ -9,6 +9,8 @@ namespace t3Dobjects
 {
     public  class objt3d
     {
+        public float cx = 1.0f;
+        public float cy = 1.0f;
         public float w = 1.0f;
         public float h = 1.0f;
         public float l = 1.0f;
@@ -16,6 +18,8 @@ namespace t3Dobjects
         public float angleteta = 1.0f;
         public float angle = 1.0f;
         public triplet startingpoint = new triplet(0.0f, 0.0f, 0.0f);
+        public float ctrad = (float)(180 / Math.PI);
+
         public objt3d() {}
         public objt3d(float pa, float pb, float pc, float pw, float ph, float pl, float pangle, float panglefi, float pangleteta)
         {
@@ -58,22 +62,25 @@ namespace t3Dobjects
         
         public void draw(ref Graphics pg)
         {
+            cx = (float)Math.Cos(( w+angle) / ctrad) * w + startingpoint.a;
+            cy = (float)Math.Sin(( h+angle) / ctrad) * h + startingpoint.b;
+
             //quare1
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a, startingpoint.b, startingpoint.a + w, startingpoint.b);
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a+w, startingpoint.b, startingpoint.a + w, startingpoint.b+h);
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a+w, startingpoint.b+h, startingpoint.a, startingpoint.b+h);
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a, startingpoint.b+h, startingpoint.a , startingpoint.b);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + cx, startingpoint.b + cy, startingpoint.a + w + cx, startingpoint.b + cy);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a+ w + cx, startingpoint.b + cy, startingpoint.a + w + cx, startingpoint.b+h + cy);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a+ w + cx, startingpoint.b+h + cy, startingpoint.a + cx, startingpoint.b+h + cy);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + cx, startingpoint.b+h + cy, startingpoint.a + cx, startingpoint.b + cy);
             //quare2
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a+l, startingpoint.b+l, startingpoint.a + w+l, startingpoint.b+l);
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + w + l, startingpoint.b + l, startingpoint.a + w + l, startingpoint.b + h + l);
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + w + l, startingpoint.b + h + l, startingpoint.a + l, startingpoint.b + h + l);
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + l, startingpoint.b + h + l, startingpoint.a + l, startingpoint.b + l);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a+ l + cx, startingpoint.b+l + cy, startingpoint.a + w+l + cx, startingpoint.b+l + cy);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + w + l + cx, startingpoint.b + l + cy, startingpoint.a + w + l + cx, startingpoint.b + h + l + cy);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + w + l + cx, startingpoint.b + h + l + cy, startingpoint.a + l + cx, startingpoint.b + h + l + cy);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + l + cx, startingpoint.b + h + l + cy, startingpoint.a + l + cx, startingpoint.b + l + cy);
 
             //linii de inaltime
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a, startingpoint.b, startingpoint.a + l, startingpoint.b + l);
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + w, startingpoint.b, startingpoint.a + w + l, startingpoint.b + l);
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + w, startingpoint.b + h, startingpoint.a + w + l, startingpoint.b + h + l);
-            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a, startingpoint.b + h, startingpoint.a + l, startingpoint.b + h + l);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + cx, startingpoint.b + cy, startingpoint.a + l + cx, startingpoint.b + l +cy);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + w + cx, startingpoint.b + cy, startingpoint.a + w + l + cx, startingpoint.b + l + cy);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + w + cx, startingpoint.b + h + cy, startingpoint.a + w + l + cx, startingpoint.b + h + l + cy);
+            pg.DrawLine(new Pen(Color.Black, 1), startingpoint.a + cx, startingpoint.b + h + cy, startingpoint.a + l + cx, startingpoint.b + h + l + cy);
 
 
             //             nu uita de teta , unghi si fi unghiruile si unghiul world
