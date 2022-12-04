@@ -150,5 +150,47 @@ namespace t3Dobjects
             world1.objlist.Add(new objt3d(10, 101, 103, 10, 101, 10));
             world1.objlist[5].draw(ref this.g);
         }
+
+        public void clearAndRefresh()
+        {
+            world1.g.Clear(this.BackColor);
+            //1 to x
+            world1.objlist.Add(new objt3d(10, 10, 10, 10, 1043, 10));
+            world1.objlist[0].draw(ref this.g);
+            world1.objlist.Add(new objt3d(10, 10, 102, 101, 10, 101));
+            world1.objlist[1].draw(ref this.g);
+            world1.objlist.Add(new objt3d(10, 10, 101, 10, 101, 10));
+            world1.objlist[2].draw(ref this.g);
+            world1.objlist.Add(new objt3d(10, 101, 10, 10, 10, 10));
+            world1.objlist[3].draw(ref this.g);
+            world1.objlist.Add(new objt3d(10, 102, 10, 101, 101, 10));
+            world1.objlist[4].draw(ref this.g);
+            world1.objlist.Add(new objt3d(10, 101, 103, 10, 101, 10));
+            world1.objlist[5].draw(ref this.g);
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            world1.angle += 5;
+            world1.objlist[0].setAngleRelativeToWorldAngle(5);
+            world1.objlist[1].setAngleRelativeToWorldAngle(5);
+            world1.objlist[2].setAngleRelativeToWorldAngle(5);
+            world1.objlist[3].setAngleRelativeToWorldAngle(5);
+            world1.objlist[4].setAngleRelativeToWorldAngle(5);
+            world1.objlist[5].setAngleRelativeToWorldAngle(5);
+            clearAndRefresh();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            world1.angle -= 5;
+          
+            world1.objlist[0].setAngleRelativeToWorldAngle(-5);
+            world1.objlist[1].setAngleRelativeToWorldAngle(-5);
+            world1.objlist[2].setAngleRelativeToWorldAngle(-5);
+            world1.objlist[3].setAngleRelativeToWorldAngle(-5);
+            world1.objlist[4].setAngleRelativeToWorldAngle(-5);
+            world1.objlist[5].setAngleRelativeToWorldAngle(-5);
+            clearAndRefresh();
+        }
     }
 }

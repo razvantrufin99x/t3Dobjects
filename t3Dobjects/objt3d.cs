@@ -59,7 +59,10 @@ namespace t3Dobjects
             this.l = pl;
 
         }
-        
+        public void setAngleRelativeToWorldAngle(float pa) {
+            this.angle = angle+pa;
+        }
+
         public void draw(ref Graphics pg)
         {
             cx = (float)Math.Cos(( w+angle) / ctrad) * w + startingpoint.a;
