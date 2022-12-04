@@ -55,6 +55,7 @@ namespace t3Dobjects
             this.l = pl;
 
         }
+        
         public void draw(ref Graphics pg)
         {
             //quare1
