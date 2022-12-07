@@ -32,6 +32,14 @@ namespace t3Dobjects
 
         }
 
+        public void drawAllShapes()
+        {
+            for (int i = 0; i < world1.objlist.Count; i++)
+            {
+                world1.objlist[i].draw(ref this.g);
+
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             world1.objlist.Add(new objt3d(10, 10, 10, 10, 1043, 10));
@@ -51,26 +59,14 @@ namespace t3Dobjects
         private void button2_Click(object sender, EventArgs e)
         {
             world1.g.Clear(this.BackColor);
+            for (int i = 0; i < world1.objlist.Count; i++)
+            {
+                world1.objlist[i].angle += 5;
+             
+            }
+            
+          drawAllShapes();
 
-            world1.objlist[0].angle += 5;
-            world1.objlist[1].angle += 5;
-            world1.objlist[2].angle += 5;
-            world1.objlist[3].angle += 5;
-            world1.objlist[4].angle += 5;
-            world1.objlist[5].angle += 5;
-
-            
-            world1.objlist[0].draw(ref this.g);
-            
-            world1.objlist[1].draw(ref this.g);
-            
-            world1.objlist[2].draw(ref this.g);
-            
-            world1.objlist[3].draw(ref this.g);
-            
-            world1.objlist[4].draw(ref this.g);
-            
-            world1.objlist[5].draw(ref this.g);
 
 
 
@@ -80,142 +76,98 @@ namespace t3Dobjects
         {
             world1.g.Clear(this.BackColor);
 
-            world1.objlist[0].angle += 5;
-            world1.objlist[1].angle += 5;
-            world1.objlist[2].angle += 5;
-            world1.objlist[3].angle += 5;
-            world1.objlist[4].angle += 5;
-            world1.objlist[5].angle += 5;
+            for (int i = 0; i < world1.objlist.Count; i++)
+            {
+                world1.objlist[i].angle += 5;
 
-            
-            world1.objlist[0].draw(ref this.g);
+            }
+
            
-            world1.objlist[1].draw(ref this.g);
-            
-            world1.objlist[2].draw(ref this.g);
-            
-            world1.objlist[3].draw(ref this.g);
-            
-            world1.objlist[4].draw(ref this.g);
-            
-            world1.objlist[5].draw(ref this.g);
+
+            drawAllShapes();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             world1.g.Clear(this.BackColor);
 
-            world1.objlist[0].angle += 15;
-            world1.objlist[1].angle += 15;
-            world1.objlist[2].angle += 15;
-            world1.objlist[3].angle += 15;
-            world1.objlist[4].angle += 15;
-            world1.objlist[5].angle += 15;
+            for (int i = 0; i < world1.objlist.Count; i++)
+            {
+                world1.objlist[i].angle += 15;
 
-           
-            world1.objlist[0].draw(ref this.g);
-            
-            world1.objlist[1].draw(ref this.g);
-           
-            world1.objlist[2].draw(ref this.g);
-           
-            world1.objlist[3].draw(ref this.g);
-            
-            world1.objlist[4].draw(ref this.g);
-            
-            world1.objlist[5].draw(ref this.g);
+            }
+
+
+            drawAllShapes();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             world1.g.Clear(this.BackColor);
 
-            world1.objlist[0].angle += 35;
-            world1.objlist[1].angle += 35;
-            world1.objlist[2].angle += 35;
-            world1.objlist[3].angle += 35;
-            world1.objlist[4].angle += 35;
-            world1.objlist[5].angle += 35;
+            for (int i = 0; i < world1.objlist.Count; i++)
+            {
+                world1.objlist[i].angle += 35;
 
-          
-            world1.objlist[0].draw(ref this.g);
-            
-            world1.objlist[1].draw(ref this.g);
-            
-            world1.objlist[2].draw(ref this.g);
-           
-            world1.objlist[3].draw(ref this.g);
-            
-            world1.objlist[4].draw(ref this.g);
-          
-            world1.objlist[5].draw(ref this.g);
+            }
+
+
+            drawAllShapes();
         }
 
         public void clearAndRefresh()
         {
             world1.g.Clear(this.BackColor);
-            //1 to x
-           
-            world1.objlist[0].draw(ref this.g);
-            
-            world1.objlist[1].draw(ref this.g);
-            
-            world1.objlist[2].draw(ref this.g);
-            
-            world1.objlist[3].draw(ref this.g);
-            
-            world1.objlist[4].draw(ref this.g);
-            
-            world1.objlist[5].draw(ref this.g);
+
+
+            drawAllShapes();
         }
         private void button6_Click(object sender, EventArgs e)
         {
             world1.angle += 5;
-            world1.objlist[0].setAngleRelativeToWorldAngle(5);
-            world1.objlist[1].setAngleRelativeToWorldAngle(5);
-            world1.objlist[2].setAngleRelativeToWorldAngle(5);
-            world1.objlist[3].setAngleRelativeToWorldAngle(5);
-            world1.objlist[4].setAngleRelativeToWorldAngle(5);
-            world1.objlist[5].setAngleRelativeToWorldAngle(5);
+            for (int i = 0; i < world1.objlist.Count; i++)
+            {
+                world1.objlist[i].setAngleRelativeToWorldAngle(5);
+
+            }
+           
             clearAndRefresh();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             world1.angle -= 5;
-          
-            world1.objlist[0].setAngleRelativeToWorldAngle(-5);
-            world1.objlist[1].setAngleRelativeToWorldAngle(-5);
-            world1.objlist[2].setAngleRelativeToWorldAngle(-5);
-            world1.objlist[3].setAngleRelativeToWorldAngle(-5);
-            world1.objlist[4].setAngleRelativeToWorldAngle(-5);
-            world1.objlist[5].setAngleRelativeToWorldAngle(-5);
+
+            for (int i = 0; i < world1.objlist.Count; i++)
+            {
+                world1.objlist[i].setAngleRelativeToWorldAngle(-5);
+
+            }
             clearAndRefresh();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            world1.angle -= 5;
 
-            world1.objlist[0].anglefi += 10;
-            world1.objlist[1].anglefi += 10;
-            world1.objlist[2].anglefi += 10;
-            world1.objlist[3].anglefi += 10;
-            world1.objlist[4].anglefi += 10;
-            world1.objlist[5].anglefi += 10;
+            for (int i = 0; i < world1.objlist.Count; i++)
+            {
+                world1.objlist[i].anglefi += 10;
+
+            }
+         
             clearAndRefresh();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            world1.angle -= 5;
 
-            world1.objlist[0].anglefi -= 10;
-            world1.objlist[1].anglefi -= 10;
-            world1.objlist[2].anglefi -= 10;
-            world1.objlist[3].anglefi -= 10;
-            world1.objlist[4].anglefi -= 10;
-            world1.objlist[5].anglefi -= 10;
+
+
+            for (int i = 0; i < world1.objlist.Count; i++)
+            {
+                world1.objlist[i].anglefi -= 10;
+
+            }
             clearAndRefresh();
         }
     }
